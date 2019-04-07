@@ -71,3 +71,13 @@ structure:
             }
         }
     
+
+INFRASTRUCTURE:
+  
+  This Lambda has been scheduled by `Cloud Watch Events` to run `every Friday at 8:00P.M`
+
+  This Lambda fetch rss feed data, parse to JSON Files
+
+  This Lambda then PUT those JSON files into `<timestamp>`/`<file_name>`.data 
+
+
