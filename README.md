@@ -5,12 +5,13 @@ To gather data for, in aggregation with SamSon Hotel's proprietary client access
 
 This lambda is to fetch and send raw json data to s3 bucket
 
-structure: 
+## Structure: 
   source: 
     - array of rss feed urls 
   data: 
     - [sitename].[category].data => general url site data (article links, urls, title, description)
 
+```
   VNEXPRESS data format:
     rss:
       $ => header
@@ -55,9 +56,13 @@ structure:
     
 
   VIETNAMNET data format:
+
     rss:
+
       $ => header
+
       channel: [0] => object
+
         {
           title:         [0] => string 
           description:   [0] => string
@@ -70,9 +75,12 @@ structure:
               image:           [0]: url_string: of image
             }
         }
+```
     
 
-INFRASTRUCTURE:
+## Infrastructure:
+
+  This is part of the ETL pipeline for samson-hotel
   
   This Lambda has been scheduled by `Cloud Watch Events` to run `every Friday at 8:00P.M`
 
